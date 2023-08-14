@@ -1,0 +1,14 @@
+Bootstrap: docker
+From: opensciencegrid/osgvo-el7:latest
+
+
+%post
+    cd /opt
+    wget -nv https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.2-Linux-x86_64.sh -O ~/miniconda.sh
+    bash ~/miniconda.sh -b -p $PWD/miniconda
+    . $PWD/miniconda/bin/activate
+    conda install -c conda-forge -c bioconda -c defaults prokka
+    conda install -c bioconda hmmer
+    conda install -c bioconda -c anaconda numpy pandas scipy biopython tensorflow=2.8.2
+    conda install -c anaconda joblib
+    conda install -c anaconda scikit-learn
