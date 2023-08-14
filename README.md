@@ -13,7 +13,8 @@ Prepare blast results via blast_forphirbo.sh <br />
 python phirbo/phirbo.py phage_virusblast/ phage_hostsblast/ phage_phirbo/predictions.csv
 
 ### PHP
-PHP.sh
+python3 PHP/countKmer.py -f phage_host_genomes -d phage_host_PHPkmer -n phage_PHPHostKmer -c -1 
+python3 PHP/PHP.py -v phage_genomes -o phage_PHPout -d phage_PHPkmer -n phage_PHPHostKmer
 
 ### PHIST
 python PHIST/phist.py phage_genome_dir phage_name phage_PHIRBO_outdir
@@ -30,6 +31,7 @@ cd /opt/miniconda/bin  <br />
 . activate <br /> 
 
 ### vpf-class 
+stack exec -- vpf-class --data-index data/index.yaml -i phage.fasta -o phage_test-classified
 
 ### vHULK
 python vHULK.py -i phage_genomes/ -o phage_vhulk_outdir --all
