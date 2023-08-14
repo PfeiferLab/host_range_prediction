@@ -42,9 +42,9 @@ perl RaFAH.pl --predict --genomes_dir phage_genomes/ --extension .fasta --valid_
 ### HostG
 python run_Speed_up.py --contigs phage_genome.fasta --t 0 
 
-# VirHostMatcher-Net
+### VirHostMatcher-Net
 python /opt/VirHostMatcher-Net/VirHostMatcher-Net.py -q phage_genomes -o phage_vhmn_out -i tmp -n 3 -t 8 <br /> 
 
-# CHERRY
+### CHERRY
 python run_Speed_up.py --contigs phage_genome.fasta --model pretrain --topk 1000
 
