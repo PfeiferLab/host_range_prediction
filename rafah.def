@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: rocker/r-ver:4.2.3
+
+%post
+    apt-get -y update
+    apt-get -y install \
+        build-essential cmake g++ curl wget
+
+    R -e "install.packages('ranger', configure.vars='CXX = g++ -std=gnu++14')"
+    cd /opt
+    curl -k -L -s https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.2-Linux-x86_64.sh > ~/miniconda.sh
+    bash ~/miniconda.sh -b -p $PWD/miniconda
+    . $PWD/miniconda/bin/activate
+    conda install -c bioconda perl-bioperl
+    conda install -c bioconda prodigal
+    conda install -c bioconda hmmer
+    conda install -c bioconda mmseqs2
+    conda install -c bioconda muscle
