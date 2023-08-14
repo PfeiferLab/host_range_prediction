@@ -11,5 +11,6 @@ PHIRBO.sh
 PHP.sh
 
 # PHIST
+PHIST.sh
 
 # VirHostMatcher 
