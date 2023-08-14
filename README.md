@@ -13,11 +13,11 @@ Prepare blast results via blast_forphirbo.sh <br />
 python phirbo/phirbo.py phage_virusblast/ phage_hostsblast/ phage_phirbo/predictions.csv
 
 ### PHP
-python3 PHP/countKmer.py -f phage_host_genomes -d phage_host_PHPkmer -n phage_PHPHostKmer -c -1 
-python3 PHP/PHP.py -v phage_genomes -o phage_PHPout -d phage_PHPkmer -n phage_PHPHostKmer
+python3 PHP/countKmer.py -f phage_host_genomes -d phage_host_PHPkmer -n phage_PHPHostKmer -c -1 <br />
+python3 PHP/PHP.py -v phage_genomes -o phage_PHPout -d phage_PHPkmer -n phage_PHPHostKmer <br />
 
 ### PHIST
-python PHIST/phist.py phage_genome_dir phage_name phage_PHIRBO_outdir
+python PHIST/phist.py phage_genome_dir phage_name phage_PHIRBO_outdir <br />
 #results will be in out directory labelled as predictions.csv
 
 ### VirHostMatcher 
