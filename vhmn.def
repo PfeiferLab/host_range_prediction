@@ -1,0 +1,20 @@
+Bootstrap: docker
+From: opensciencegrid/osgvo-el7:latest
+
+%post
+    cd /opt
+    wget -nv https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.2-Linux-x86_64.sh -O ~/miniconda.sh
+    bash ~/miniconda.sh -b -p $PWD/miniconda
+    . $PWD/miniconda/bin/activate
+    conda install numpy pandas Biopython
+    conda install -c bioconda blast
+    git clone https://github.com/WeiliWw/VirHostMatcher-Net.git
+    cd VirHostMatcher-Net
+    export PYTHONPATH=$PWD/src
+    CC=g++ python setup.py install --install-platlib=$PWD/src/
+    fileid="185U3ZLYe1uNmB5oCaIlb0IQNURnlyXcN"
+    filename="data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz"
+    curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${fileid}" > /dev/null
+    curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=${fileid}" -o ${filename}
+    # extract
+    tar xf data_VirHostMatcher-Net_complete_genome_mode_alone.tar.gz || true
