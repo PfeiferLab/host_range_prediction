@@ -1,0 +1,165 @@
+>AF503408.1
+>gi|261410449|gb|GQ866233.1| Aggregatibacter phage S1249, complete sequence
+>gi|383394854|gb|JQ312117.1| Agrobacterium phage 7-7-1, complete genome
+>AP000422.1
+>AP011113.1
+>AY150271.2
+>AY301284.1
+>gi|519661649|dbj|AP013029.1| Bacillus phage phiNIT1 DNA, complete genome
+>gi|359840830|gb|JQ062992.1| Bacillus phage phIS3501, complete genome
+>gi|148763551|gb|EF602154.1| Burkholderia phage BcepNY3, complete genome
+>gi|529281460|gb|KF301602.1| Caulobacter phage Cr30, complete genome
+>gi|398256499|gb|JX163858.1| Caulobacter phage phiCbK, complete genome
+>gi|7190959|gb|AE002163.1| Chlamydia phage phiCPAR39, complete sequence
+>gi|110684521|gb|CP000315.1| Clostridium phage phiSM101, complete genome
+>gi|388549399|gb|HQ317390.1| Colwellia phage 9A, complete genome
+>gi|392284348|gb|JQ867099.1| Croceibacter phage P2559S, complete genome
+>gi|505838216|gb|KC688701.1| Croceibacter phage P2559Y, complete genome
+>gi|428231464|gb|KC107834.1| Cronobacter sakazakii phage vB_CskP_GAP227, complete genome
+>DQ126339.2
+>gi|194021541|gb|EU078592.1| Enterobacteria phage DE3, complete genome
+>gi|117650898|gb|EF056009.1| Enterobacteria phage N4, complete genome
+>gi|169643728|dbj|AB362338.2| Enterobacteria phage P22 DNA, complete sequence, strain: MSU
+>gi|169658842|dbj|AB426868.1| Enterobacteria phage P22 DNA, complete genome, strain: ATCC 19585-B1
+>gi|46357884|dbj|AB102868.1| Enterobacteria phage ST104 DNA, complete genome
+>gi|323481889|gb|CP002495.1| Enterococcus phage EF62phi, complete genome
+>gi|309386901|gb|HM173637.1| Escherichia phage HK75, complete genome
+>gi|510948995|gb|KC801932.2| Escherichia phage Lw1, complete genome
+>gi|338235630|gb|JF770475.1| Escherichia phage phiEB49, complete genome
+>EU877232.1
+>FJ184280.1
+>FJ188381.1
+>GQ981382.1
+>GS874856.1
+>GS874857.1
+>GS874858.1
+>GS874859.1
+>GU071091.1
+>gi|571033264|gb|KF056323.1| Haloarcula hispanica pleomorphic virus 2, complete genome
+>gi|442736110|gb|KC252997.1| Halovirus PH1, complete genome
+>gi|357575078|gb|JF734911.1| Helicobacter phage phiHP33, complete genome
+>HM035024.1
+>HM035025.1
+>HM997020.1
+>HQ259105.1
+>HQ665011.1
+>JN882287.1
+>JN986844.1
+>JN986845.1
+>JN986846.1
+>JQ031132.1
+>JQ086369.1
+>JQ086370.1
+>JQ086372.1
+>JQ086373.1
+>JQ086374.1
+>JQ086375.1
+>JQ086376.1
+>JQ086377.1
+>JQ182726.1
+>JQ182727.1
+>JQ182731.1
+>JQ182732.1
+>JQ182734.1
+>JQ182735.1
+>JQ182736.1
+>JQ513383.1
+>JX536493.1
+>JX867715.1
+>KC131129.1
+>KF562340.1
+>KF562341.1
+>KF582788.2
+>KF771236.1
+>KF771237.1
+>KF771238.1
+>KF771239.1
+>KJ135004.2
+>KM979354.1
+>KM979355.1
+>KP007359.1
+>KT184308.1
+>KT184309.1
+>KT184311.1
+>KT184312.1
+>LN881726.1
+>LN881728.1
+>MG867727.1
+>MH051913.1
+>MH051915.1
+>MH051916.1
+>MH051917.1
+>MK295203.1
+>gi|1938375436|ref|NC_051736.1| Mycobacterium phage Arib1, complete genome
+>gi|1938374866|ref|NC_051729.1| Mycobacterium phage Atcoo, complete genome
+>gi|1938375274|ref|NC_051734.1| Mycobacterium phage Bartholomew, complete genome
+>gi|1209837894|gb|MF133446.1| Mycobacterium phage Bogie, complete genome
+>gi|971482395|ref|NC_028747.1| Mycobacterium phage Brusacoram, complete genome
+>gi|1700519907|gb|MN096356.1| Mycobacterium phage Bunnies, complete genome
+>gi|1799122437|gb|MN892484.1| Mycobacterium phage CactusJack, complete genome
+>gi|1944259465|gb|MW055902.1| Mycobacterium phage Camster, complete genome
+>gi|574093851|gb|KF841477.1| Mycobacterium phage Donovan, complete genome
+>gi|1938375352|ref|NC_051735.1| Mycobacterium phage FirstPlacePfu, complete genome
+>gi|508178429|ref|NC_021302.1| Mycobacterium phage Fishburne, complete genome
+>gi|1789799902|gb|MN807250.1| Mycobacterium phage Glaske, complete genome
+>gi|1938375034|ref|NC_051731.1| Mycobacterium phage GreaseLightnin, complete genome
+>MN010757.1 Mycobacterium phage HUHilltop, complete genome
+>gi|1631926970|ref|NC_041969.1| Mycobacterium phage Jebeks, complete genome
+>gi|1938374951|ref|NC_051730.1| Mycobacterium phage Jung, complete genome
+>gi|1998556009|ref|NC_053209.1| Mycobacterium phage KilKor, complete genome
+>gi|1938375115|ref|NC_051732.1| Mycobacterium phage Ksquared, complete genome
+>gi|1938375515|ref|NC_051737.1| Mycobacterium phage Majeke, complete genome
+>gi|751185919|gb|KP027200.1| Mycobacterium phage Malithi, complete genome
+>gi|1509789149|gb|MK016499.1| Mycobacterium phage Mangethe, complete genome
+>gi|1938374769|ref|NC_051728.1| Mycobacterium phage Megiddo, complete genome
+>gi|1698242428|gb|MK937604.1| Mycobacterium phage Necropolis, complete genome
+>gi|1789799743|gb|MN807248.1| Mycobacterium phage Phalm, complete genome
+>gi|1938375196|ref|NC_051733.1| Mycobacterium phage Phineas, complete genome
+>gi|1070639280|ref|NC_031261.1| Mycobacterium phage Shipwreck, complete genome
+>gi|1233030791|gb|MF373843.1| Mycobacterium phage StevieRay, complete genome
+>gi|1817917644|gb|MN908683.1| Mycobacterium phage StressBall, complete genome
+>gi|1696894443|gb|MK919480.1| Mycobacterium phage Techage, complete genome
+>gi|1278260784|gb|MG198785.1| Mycobacterium phage Thespis, complete genome
+>gi|1938374683|ref|NC_051727.1| Mycobacterium phage Willsammy, complete genome
+>gi|1585630347|gb|MK524508.1| Mycobacterium phage Zilizebeth, complete genome
+>gi|1631918679|ref|NC_041888.1| Mycobacterium phage Tortellini, complete genome
+>gi|1938375763|ref|NC_051740.1| Mycobacterium phage Xavia, complete genome
+>gi|593774630|ref|NC_023692.1| Mycobacterium phage BigNuz, complete genome
+>gi|1072746332|gb|KX641262.1| Mycobacterium phage Nazo, complete genome
+>gi|817036076|gb|KR080195.1| Mycobacterium phage Phayonce, complete genome
+>gi|1756567666|gb|MN234172.1| Mycobacterium phage ThulaThula, complete genome
+>gi|1700519822|gb|MN096355.1| Mycobacterium phage Purky, complete genome
+>gi|374717067|gb|JQ015307.1| Pectobacterium phage phiTE, complete genome
+>gi|408385543|gb|JX296113.1| Providencia phage Redjac, complete genome
+>gi|111433558|gb|DQ873690.1| Phage MP22, complete genome
+>gi|169409240|gb|EU272036.1| Pseudomonas phage MP29, complete genome
+>gi|169409292|gb|EU272037.1| Pseudomonas phage MP38, complete genome
+>gi|380851590|gb|JQ762257.1| Pseudomonas phage MP42, complete genome
+>gi|555923459|gb|KF475786.1| Pseudomonas phage MP48, complete genome
+>gi|529282156|gb|KC862297.1| Pseudomonas phage PAK_P1, complete genome
+>gi|526776091|gb|KC862298.1| Pseudomonas phage PAK_P2, complete genome
+>gi|529282338|gb|KC862299.1| Pseudomonas phage PAK_P3, complete genome
+>gi|526776290|gb|KC862300.1| Pseudomonas phage PAK_P4, complete genome
+>gi|526776597|gb|KC862301.1| Pseudomonas phage PAK_P5, complete genome
+>gi|271277964|emb|FN594518.1| Pseudomonas phage phi-2, complete genome, isolated from Pseudomonas fluorescens SBW25
+>gi|586881840|gb|KJ409772.1| Pseudomonas phage phiPsa374, complete genome
+>gi|440807778|gb|GU557055.1| Puniceispirillum phage HMO-2011, complete genome
+>gi|695255575|gb|KM581061.1| Ruegeria phage DSS3-P1, complete genome
+>gi|17940319|gb|AF448724.1| Sinorhizobium meliloti phage PBC5, complete genome
+>gi|89191716|dbj|AP009146.1| Sodalis phage phiSG1 DNA, complete genome
+>gi|18920487|gb|AF424781.1| Staphylococcus aureus phage phi 11, complete genome
+>gi|18920541|gb|AF424782.1| Staphylococcus aureus phage phi 12, complete genome
+>gi|18920591|gb|AF424783.1| Staphylococcus aureus phage phi 13, complete genome
+>gi|314912616|gb|HQ268735.1| Streptococcus phage Dp-1, complete genome
+>gi|520957421|emb|HE962497.1| Streptococcus phage SP-QS1 complete genome
+>gi|339293023|gb|CP002889.1| Streptococcus phage YMC-2011, complete genome
+>gi|408384544|gb|JX182369.1| Streptomyces phage phiHau3, complete genome
+>gi|408384617|gb|JX182370.1| Streptomyces phage R4, complete genome
+>gi|662488894|gb|HQ332142.2| Sulfitobacter phage pCB2047-A, complete genome
+>gi|575396526|gb|HQ317387.2| Sulfitobacter phage phiCB2047-B genomic sequence
+>gi|662488900|gb|HQ317384.2| Sulfitobacter phage pCB2047-C, complete genome
+>gi|55770953|emb|AJ748296.1| Sulfolobus islandicus rudivirus 1 variant XX, complete genome
+>gi|571265371|emb|HG322870.1| Sulfolobus monocaudavirus SMV1 complete genome
+>gi|389571277|gb|CP003186.1| Thermoanaerobacterium phage THSA-485A, complete genome
+>gi|356927359|gb|HQ316604.1| Vibrio phage SIO-2, complete genome
+>gi|193201200|gb|EU734170.1| Yersinia phage Yepe2, complete genome
