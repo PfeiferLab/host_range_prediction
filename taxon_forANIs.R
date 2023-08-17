@@ -1,5 +1,3 @@
-#start here 
-#sadness - check names in null WISH directory
 setwd("/Users/pfeiferlab/Documents/hostrange/")
 names=read.csv("nameslist.csv", header=FALSE)
 setwd("/Users/pfeiferlab/")
@@ -49,7 +47,7 @@ php_sonly1=php_sonly[,c("V1")]
 
 vhmn_sonly1=vhmn_sonly[,c("V1")]
 
-#actually its got like 8000 files that ridiculous, just use the VHMN dataset fuck it and explain caveat 
+#PHP has 8000 files, use the VHMN dataset and explain caveat 
 
 #str_detect(to$V1, to$V1)
 setwd("/Users/pfeiferlab/Documents/hostrange/")
@@ -158,12 +156,6 @@ ani.dat <- ani.dat %>%
 data = cor(ani.dat[sapply(ani.dat, is.numeric)])
 data1 <- melt(data)
 
-#jk dont need
-#library(stringr)
-#data4=data4 %>% 
-#  mutate(label = case_when(str_detect(Var1, "Esch" ) ~ "E. coli",
-#                           str_detect(Var1, "Shig" ) ~ "Shigella",
-#                           str_detect(Var1, "Salmo" ) ~ "Salmonella"))
 
 #this is NOT the lenght of data4 but the lenght of ANI.dat
 breaks=levels(data1$Var1)[c(1,12,16,21,114,197)]
