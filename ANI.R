@@ -1,23 +1,7 @@
-# Written by: Cyril Joseph Versoza
-# Date: March 26, 2022
-
-# This script will be used to generate a heatmap from the ANI values calculated by DNA Master.
-# Specifically, ANI values between BiggityBass and other Gordonia phages.
-
 # Load libraries.
 library(ggplot2)
 library(reshape)
 library(viridis)
-
-setwd("C:/Users/Owner/OneDrive - Arizona State University/Documents/hostrange/WISH/formanuscript/")
-# Load table.
-#ani.dat <- read.csv("ClusterPs_averagenucleotidedensity.csv", header = T)
-ani.dat <- read.csv("ANIb_percentage_identity.names.txt", sep="\t", header = T)
-
-names=read.csv("outfile_names.csv",header=FALSE)
-colnames(ani.dat) = names$V9
-names=read.csv("outfile_names.csv",header=TRUE)
-ani.dat$V9=names$V9
 
 setwd("C:/Users/Owner/OneDrive - Arizona State University/Documents/hostrange/")
 ani.dat <- read.csv("ANIb_percentage_identity_viruses.txt", sep="\t", header = T)
