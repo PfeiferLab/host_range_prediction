@@ -7,7 +7,6 @@ library(stringr)
 library("dplyr")
 
 ani.dat <- read.csv("ANIb_percentage_identity.txt", sep="\t", header = T)
-#pain in the ass renaming schemme 
 #get into correct format first from echo $x and head-n1
 
 key=read.csv("ecoli_hosts_name_key.csv",header=FALSE)
@@ -18,7 +17,7 @@ key2$V1=sub('.fna.long', '', key2$V1)
 
 key2$V2=sub('>', '', key2$V2)
 
-#get rid of stupid X in column names
+#get rid of X in column names
 colnames(ani.dat)=sub('X', '', colnames(ani.dat))
 
 
@@ -34,15 +33,12 @@ colnames(ani.dat) <- dplyr::recode(
 
 ####
 ####DO NOT USE THIS UNLESSS SUBSETTING FOR A REASON
-#why does salmonella v ecoli look less different here than the alone version?
 #drop rows first then cols
 php3=ani.dat[grepl("Salmonella|Shigella|Escherichia", ani.dat$key),]
 php4=php3[,grepl("Salmonella|Shigella|Escherichia", colnames(php3))]
 #order alphabeticLLY
 ani.dat=php4[,order(colnames(php4))]
 ###################
-#ok guess it really does matter whos being comapred to what its all on a relative scale 
-
 
 ###STRAIGHT TO THIS FOR CONFIRMATORY ECOLI DATASET
 #order alphabeticLLY
