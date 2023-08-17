@@ -76,7 +76,7 @@ q = ggplot() +
                             labels = c("no","yes"),
                             name = "experimentally validated host?") + 
   
-  ###this whole next part is just to get the stupid border
+  ###this whole next part is just to get the border
   geom_point(data=combined, aes(rename, fct_inorder(variable), shape = shape2), size = 5, stroke=2) +
   
   #scale_shape_identity() +
@@ -166,7 +166,7 @@ q = ggplot() +
                             labels = c("no","yes"),
                             name = "experimentally validated host?") + 
   
-  ###this whole next part is just to get the stupid border
+  ###this whole next part is just to get the border
   geom_point(data=combined, aes(tool, fct_inorder(variable), shape = shape2), size = 11, stroke=2) +
   
   #scale_shape_identity() +
