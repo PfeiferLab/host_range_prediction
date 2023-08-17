@@ -24,7 +24,7 @@ python PHIST/phist.py phage_genome_dir phage_name phage_PHIRBO_outdir <br />
 python /opt/VirHostMatcher-Net/VirHostMatcher-Net.py -q phage_genomes/ -o Phage_vhmn_output -n 1000 
 
 # Exploratory Tools 
-All exploratory tools require a docker image to be created before running the tools
+All exploratory tools require a docker image to be created before running the tools <br /> 
 apptainer build toolname.sif toolname.def <br /> 
 apptainer shell toolname.sif <br /> 
 cd /opt/miniconda/bin  <br /> 
