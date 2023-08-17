@@ -54,7 +54,13 @@ Figures 1A-D and Table 1 were created with dotplots_ani_combined_formanuscript.R
 
 Figure 2, 3A-B were created with upsetRforcomparitivepaper.R <br />
 
-Supplementary Figure S1 was created with 
+Supplementary Figure S1 was created with correlations.R <br />
+
+Supplementary Figures 2, 3B were created with taxon_for_ANIs.R <br />
+
+Supplementary Figure 3A was created with taxon_for_ANIs_localtemp.R <br /> 
+
+Supplementary Figures 4A,B were created with ANIs.R <br /> 
 
 KFS-EC3 is able to infect E. coli ATCC 10536 but not E. coli 15144, E. coli 2192, or E. coli 2196.  <br />
 Genomes for these E. coli were filtered for the longest contig with long_script.py and then aligned to each other using blastn and annotated using prokka. <br />
