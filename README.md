@@ -1,27 +1,32 @@
 # Confirmatory Tools 
 
 ### Phirbo
+https://github.com/aziele/phirbo <br />
 Download taxdb.btd, taxdb.bti, taxdb.tar.gz from https://ftp.ncbi.nlm.nih.gov/blast/db/taxdb.tar.gz <br />
 Prepare rank-biased overlap blast results via blast_forphirbo.sh <br />
 Run phribo by providing two input directories (for phages and bacteria) containing ranked lists from blast output, and an output file name 
 python phirbo/phirbo.py phage_virusblast/ phage_hostsblast/ phage_phirbo/predictions.csv
 
 ### PHIST
+https://github.com/refresh-bio/PHIST <br />
 PHIST takes as input two directories containing FASTA files (gzipped or not) with genomic sequences of viruses and candidate hosts  <br />
 python PHIST/phist.py phage_genome_dir phage_name phage_PHIRBO_outdir <br />
 results will be in out directory labelled as predictions.csv
 
 ### Prokaryotic virus Host Predictor (PHP)
+https://github.com/congyulu-bioinfo/PHP  <br />
 First calculate the K-mer frequency of the host <br />
 python3 PHP/countKmer.py -f phage_host_genomes -d phage_host_PHPkmer -n phage_PHPHostKmer -c -1 <br />
-Then predict the infection relationship between the virus and the host
+Then predict the infection relationship between the virus and the host  <br />
 python3 PHP/PHP.py -v phage_genomes -o phage_PHPout -d phage_PHPkmer -n phage_PHPHostKmer <br />
 
 ### VirHostMatcher 
-To run VHM create a folder containing virus fasta files and a folder containing host fasta files - no subfolders 
+https://github.com/jessieren/VirHostMatcher <br />
+To run VHM create a folder containing virus fasta files and a folder containing host fasta files - no subfolders  <br />
 python /opt/VirHostMatcher-Net/VirHostMatcher-Net.py -q phage_genomes/ -o Phage_vhmn_output -n 1000 
 
 ### WIsH 
+https://github.com/soedinglab/WIsH <br /> 
 Null directory is created from a diverse range of Alteromonas, Cellulophage, Cyanophage, Lactobacillus, Mycobacterium, Oenococcus, Pelagibacter, Prochlorococcus, Rhizobium, Synechococcus, and Thermus phage genomes that are known not to infect the bacterial model listed in null.txt <br /> 
 Create host model directory <br /> 
 WIsH/WIsH -c build -g phage_hosts_genomes/ -m modelDir  <br /> 
@@ -39,21 +44,38 @@ cd /opt/miniconda/bin  <br />
 . activate <br /> 
 
 ### CHERRY
+https://github.com/KennthShang/CHERRY <br /> 
+Prepare the database by unpacking in install location via the apptainer shell cherry.sif <br /> 
+Predict hosts for viruses using a fasta file containing the viral sequences as the input <br />  
 python run_Speed_up.py --contigs phage_genome.fasta --model pretrain --topk 1000
 
 ### HostG
+https://github.com/KennthShang/HostG  <br /> 
+Prepare the database by unpacking in install location via the apptainer shell hostg.sif <br /> 
+Predict hosts for viruses using a fasta file containing the viral sequences as the input <br />  
 python run_Speed_up.py --contigs phage_genome.fasta --t 0 
 
 ### Random Forest Assignment of Hosts (RaFAH)
+https://github.com/felipehcoutinho/RaFAH <br />  
+To setup RaFAH download and decompress all the files listed in the RaFAH github repositroy <br />  
+Perform host predictions using a set of pre-computed model files 
 perl RaFAH.pl --predict --genomes_dir phage_genomes/ --extension .fasta --valid_ogs_file HP_Ranger_Model_3_Valid_Cols.txt --hmmer_db_file_name HP_Ranger_Model_3_Filtered_0.9_Valids.hmm --r_script_predict_file_name RaFAH_Predict_Host.R --r_model_file_name MMSeqs_Clusters_Ranger_Model_1+2+3_Clean.RData
 
 ### viral Host UnveiLing Kit (vHULK)
+https://github.com/LaboratorioBioinformatica/vHULK 
+Run vHULK on target genera 
 python vHULK.py -i phage_genomes/ -o phage_vhulk_outdir --all
 
 ### VirHostMatcher-Net
+https://github.com/WeiliWw/VirHostMatcher-Net <br /> 
+Install dependencies, build local modules, download required databases via the apptainer shell vhmn.sif <br /> 
+Run VirHostMatcher-Net <br /> 
 python /opt/VirHostMatcher-Net/VirHostMatcher-Net.py -q phage_genomes -o phage_vhmn_out -i tmp -n 3 -t 8 <br /> 
 
 ### VPF-Class 
+https://github.com/biocom-uib/vpf-tools
+Clone the repository and compile all targets using the apptainer shell vhulk.sif <br /> 
+Run vHULK <br /> 
 stack exec -- vpf-class --data-index data/index.yaml -i phage.fasta -o phage_test-classified
 
 
