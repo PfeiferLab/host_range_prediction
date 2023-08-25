@@ -2,25 +2,30 @@
 
 ### Phirbo
 Download taxdb.btd, taxdb.bti, taxdb.tar.gz from https://ftp.ncbi.nlm.nih.gov/blast/db/taxdb.tar.gz <br />
-Prepare blast results via blast_forphirbo.sh <br />
+Prepare rank-biased overlap blast results via blast_forphirbo.sh <br />
+Run phribo by providing two input directories (for phages and bacteria) containing ranked lists from blast output, and an output file name 
 python phirbo/phirbo.py phage_virusblast/ phage_hostsblast/ phage_phirbo/predictions.csv
 
 ### PHIST
+PHIST takes as input two directories containing FASTA files (gzipped or not) with genomic sequences of viruses and candidate hosts  <br />
 python PHIST/phist.py phage_genome_dir phage_name phage_PHIRBO_outdir <br />
-#results will be in out directory labelled as predictions.csv
+results will be in out directory labelled as predictions.csv
 
 ### Prokaryotic virus Host Predictor (PHP)
+First calculate the K-mer frequency of the host <br />
 python3 PHP/countKmer.py -f phage_host_genomes -d phage_host_PHPkmer -n phage_PHPHostKmer -c -1 <br />
+Then predict the infection relationship between the virus and the host
 python3 PHP/PHP.py -v phage_genomes -o phage_PHPout -d phage_PHPkmer -n phage_PHPHostKmer <br />
 
 ### VirHostMatcher 
+To run VHM create a folder containing virus fasta files and a folder containing host fasta files - no subfolders 
 python /opt/VirHostMatcher-Net/VirHostMatcher-Net.py -q phage_genomes/ -o Phage_vhmn_output -n 1000 
 
 ### WIsH 
 Null directory is created from a diverse range of Alteromonas, Cellulophage, Cyanophage, Lactobacillus, Mycobacterium, Oenococcus, Pelagibacter, Prochlorococcus, Rhizobium, Synechococcus, and Thermus phage genomes that are known not to infect the bacterial model listed in null.txt <br /> 
-#create host model directory <br /> 
+Create host model directory <br /> 
 WIsH/WIsH -c build -g phage_hosts_genomes/ -m modelDir  <br /> 
-#Run predict on null to get llikelihood.matrix in outputNullModelResultDir to feed into computeNullParameters.R  <br /> 
+Run predict on null to get llikelihood.matrix in outputNullModelResultDir to feed into computeNullParameters.R  <br /> 
 WIsH/WIsH -c predict -g null/ -m modelDir -r outputNullModelResultDir -b 1000   <br /> 
 Rscript ../WIsH/computeNullParameters.R  <br /> 
 WIsH/WIsH -c predict -g phage_genomes/ -m modelDir -r outputResultDir -b 1000 -n outputNullModelResultDir/nullParameters.tsv <br /> 
