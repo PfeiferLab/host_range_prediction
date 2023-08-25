@@ -58,7 +58,7 @@ python run_Speed_up.py --contigs phage_genome.fasta --t 0
 ### Random Forest Assignment of Hosts (RaFAH)
 https://github.com/felipehcoutinho/RaFAH <br />  
 To setup RaFAH download and decompress all the files listed in the RaFAH github repositroy <br />  
-Perform host predictions using a set of pre-computed model files 
+Perform host predictions using a set of pre-computed model files <br />  
 perl RaFAH.pl --predict --genomes_dir phage_genomes/ --extension .fasta --valid_ogs_file HP_Ranger_Model_3_Valid_Cols.txt --hmmer_db_file_name HP_Ranger_Model_3_Filtered_0.9_Valids.hmm --r_script_predict_file_name RaFAH_Predict_Host.R --r_model_file_name MMSeqs_Clusters_Ranger_Model_1+2+3_Clean.RData
 
 ### viral Host UnveiLing Kit (vHULK)
