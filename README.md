@@ -62,8 +62,8 @@ Perform host predictions using a set of pre-computed model files
 perl RaFAH.pl --predict --genomes_dir phage_genomes/ --extension .fasta --valid_ogs_file HP_Ranger_Model_3_Valid_Cols.txt --hmmer_db_file_name HP_Ranger_Model_3_Filtered_0.9_Valids.hmm --r_script_predict_file_name RaFAH_Predict_Host.R --r_model_file_name MMSeqs_Clusters_Ranger_Model_1+2+3_Clean.RData
 
 ### viral Host UnveiLing Kit (vHULK)
-https://github.com/LaboratorioBioinformatica/vHULK 
-Run vHULK on target genera 
+https://github.com/LaboratorioBioinformatica/vHULK <br />  
+Run vHULK on target genera <br />  
 python vHULK.py -i phage_genomes/ -o phage_vhulk_outdir --all
 
 ### VirHostMatcher-Net
@@ -73,7 +73,7 @@ Run VirHostMatcher-Net <br />
 python /opt/VirHostMatcher-Net/VirHostMatcher-Net.py -q phage_genomes -o phage_vhmn_out -i tmp -n 3 -t 8 <br /> 
 
 ### VPF-Class 
-https://github.com/biocom-uib/vpf-tools
+https://github.com/biocom-uib/vpf-tools <br />  
 Clone the repository and compile all targets using the apptainer shell vhulk.sif <br /> 
 Run vHULK <br /> 
 stack exec -- vpf-class --data-index data/index.yaml -i phage.fasta -o phage_test-classified
