@@ -36,7 +36,6 @@ vhmn_gonly=vhmn2[grepl("malaquae|terrae|hydrophobica|rubripertincta", vhmn2$V9),
 
 to=rbind(php_gonly, vhmn_gonly)
 to2=to[,c("V1")]
-setwd("/Users/pfeiferlab/Documents/hostrange/")
 write.table(to2, "outfile.txt",row.names=FALSE,quote=FALSE,col.names=FALSE)
 
 ## Use this outfile - no looping needed 
@@ -146,8 +145,15 @@ ani.dat <- ani.dat %>%
 data = cor(ani.dat[sapply(ani.dat, is.numeric)])
 data1 <- melt(data)
 
-# This is NOT the length of data4 but the lenght of ANI.dat
-breaks=levels(data1$Var1)[c(1,12,17,21,114,197)]
+ani.dat = ani.dat[, -which(names(ani.dat) %in% c("Escherichia_coli_ATCC_15144", "Escherichia_coli_ATCC_25922",
+                                    "Escherichia_coli_ATCC_BAA_2192","Escherichia_coli_ATCC_BAA_2196",
+                                    "Escherichia_colistr.K12.MG1655_source29",
+                                    "Salmonella_enterica_subsp_enterica_ATCC_13311",
+                                    "Shigella flexneri NC_008258.1"))]
+
+# Show first instance of Escherichia, Salmonella, and Shigella.
+breaks=levels(data1$Var1)[c(1,7,11,15,108,191)]
+
 
 # Create heatmap
 ggplot(data1, aes(Var1, Var2)) +
