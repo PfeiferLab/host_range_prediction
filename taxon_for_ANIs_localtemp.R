@@ -1,14 +1,19 @@
-#same thing for ecoli but setup is alightly different due to how the ATCC contigs are labelled 
-#actually here on lab desktop 
-#setwd("/Users/pfeiferlab/Documents/hostrange/ani_ecoli_hosts_seq_output/")
-#but temp working on it locally 
-setwd("C:/Users/Owner/OneDrive - Arizona State University/Documents/hostrange/")
+## Written by: Abby Howell
+## Modified by: Cyril Versoza
+## Date: August 28, 2023
+
+# Load necessary libraries:
 library(stringr)
 library("dplyr")
+library(gtools)
+library(reshape2)
+library(ggplot2)
+library(viridis)
+
 
 ani.dat <- read.csv("ANIb_percentage_identity.txt", sep="\t", header = T)
-#get into correct format first from echo $x and head-n1
 
+# Use key to rename the data.
 key=read.csv("ecoli_hosts_name_key.csv",header=FALSE)
 key2=as.data.frame(matrix(key$V1, ncol = 2, byrow = TRUE))
 
@@ -17,7 +22,7 @@ key2$V1=sub('.fna.long', '', key2$V1)
 
 key2$V2=sub('>', '', key2$V2)
 
-#get rid of X in column names
+# Remove X in column names.
 colnames(ani.dat)=sub('X', '', colnames(ani.dat))
 
 
@@ -31,44 +36,40 @@ colnames(ani.dat) <- dplyr::recode(
   !!!setNames(as.character(key2$V1), as.character(key2$V2))
 )
 
-####
-####DO NOT USE THIS UNLESSS SUBSETTING FOR A REASON
-#drop rows first then cols
+### The following lines is only important for subsetting. ###
+# Drop rows first then cols.
 php3=ani.dat[grepl("Salmonella|Shigella|Escherichia", ani.dat$key),]
 php4=php3[,grepl("Salmonella|Shigella|Escherichia", colnames(php3))]
-#order alphabeticLLY
+# Order alphabetically.
 ani.dat=php4[,order(colnames(php4))]
-###################
+### End of subsetting. ###
 
-###STRAIGHT TO THIS FOR CONFIRMATORY ECOLI DATASET
-#order alphabeticLLY
+### If not subsetting, proceed here. ###
+# Order alphabetically.
 ani.dat=ani.dat[,order(colnames(ani.dat))]
 
-library(gtools)
 ani.dat=ani.dat[,mixedsort(colnames(ani.dat))]
 
 
-#order so all actual hosts are in the corner
+# Order so all actual hosts are in the corner
 ani.dat <- ani.dat %>%
-  select(Escherichia_coli_ATCC_10536, Escherichia_coli_ATCC_35150, 
-         Escherichia_coli_ATCC_43888, Escherichia_coli_ATCC_43890, Escherichia_coli_ATCC_43894,
-         Escherichia_coli_ATCC_43895, Escherichiacolistr.K12substr.MG1655,
-        Salmonella_enterica_ATCC_13076,
+  select(Escherichia_coli_ATCC_10536,
+        Escherichia_coli_ATCC_35150, 
+        Escherichia_coli_ATCC_43888,
+        Escherichia_coli_ATCC_43890,
+        Escherichia_coli_ATCC_43894,
+        Escherichia_coli_ATCC_43895,
+        Salmonella_enterica_ATCC_13076,		
+        Salmonella_enterica_ATCC_14028,
         Salmonella_Typhimuriumstr.LT2,
-         Salmonella_Typhimuriumstr.SL1344,
-         Salmonella_enterica_ATCC_13076,		
-         Salmonella_enterica_ATCC_14028,
-         Shigella_flexneri_ATCC_29903,
+        Salmonella_Typhimuriumstr.SL1344,
+        Shigella_flexneri_ATCC_12022,
+        Shigella_flexneri_ATCC_29903,
         Shigella_flexneri2astr.2457T,
-        Shigella_sonnei_ATCC_9290, everything())
+        Shigella_sonnei_ATCC_9290,
+        everything())
 
-
-
-
-library(reshape2)
-library(ggplot2)
-library(viridis)
-
+# Melt the data.
 data = cor(ani.dat[sapply(ani.dat, is.numeric)])
 data1 <- melt(data)
 
@@ -81,5 +82,3 @@ ggplot(data1, aes(Var1, Var2)) +
         axis.title.x = element_blank(), # next two lines are to remove axis titles
         axis.title.y = element_blank()) +
   labs(fill="ANI") 
-
-
