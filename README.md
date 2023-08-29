@@ -32,10 +32,11 @@ Then, predict the infection relationship between the virus and the host  <br />
 ### VirHostMatcher 
 https://github.com/jessieren/VirHostMatcher <br />
 To run VHM create a folder containing virus fasta files and a folder containing host fasta files - no subfolders  <br />
-`python VirHostMatcher/vhm.py -v phage_genomes/ -b phage_host_genomes/ -o Phage_vhm_output/` <br />
+`python VirHostMatcher/vhm.py -v phage_genomes/ -b phage_host_genomes/ -o Phage_vhm_output/ -d 1` <br />
 - `-v phage_genomes/`: path to virus folder
 - `-b phage_host_genomes/`: path to host folder
 - `-o Phage_vhm_output/`: path to output
+- `-d 1`: only calculate the d2* dissimilarity (1 for yes, 0 for no; default: 0)
 
 ### WIsH 
 https://github.com/soedinglab/WIsH <br /> 
