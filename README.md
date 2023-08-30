@@ -54,7 +54,8 @@ Rscript ../WIsH/computeNullParameters.R
 WIsH/WIsH -c predict -g phage_genomes/ -m modelDir -r outputResultDir -b 1000 -n outputNullModelResultDir/nullParameters.tsv
 ```
 - `-c predict`: tell WIsH to run a prediction
-- `-g null/` & `-g phage_genomes/`: where bacterial genomes in FASTA format are stored
+- `-g null/`: where the null bacterial genomes in FASTA format are stored
+- `-g phage_genomes/`: where phage genomes in FASTA format are stored
 - `-m modelDir`: where model for each bacterial genome will be stored
 - `-r outputResultDir`: where results will be stored
 - `-b 1000`: k option to output the k best prediction by likelihood
