@@ -1,13 +1,5 @@
-#loadfirst
-setwd("C:/Users/Owner/OneDrive - Arizona State University/Documents/hostrange/asynt/")
 library(intervals)
-
 source("asynt.R")
-
-#if we have a single genomic region we are interested in, we can visualise the alignments diretcly
-# First import the alignment data
-setwd("C:/Users/Owner/OneDrive - Arizona State University/Documents/hostrange/")
-#alignments <- import.paf("mm2asm20.paf.gz")
 
 ###TO RUN
 #SELCT A BLAST = ASSIGN EACH RESULTS A prokka3 prokka4 or prokka5 
@@ -83,7 +75,7 @@ prokka1$overlap=IRanges::overlapsAny(query, subject)
 #may be multiple gaps in same prokka gene entry 
 #so therefore cant easily do "prokka2$width=crossref$width" to filter short overlaps
 prokka2=prokka1[prokka1$overlap == "TRUE",]
-#crossref function not suoer useful at this omoment 
+#crossref function not useful at this omoment 
 #crossref=as.data.frame(IRanges::overlapsRanges(subject, query))
 prokka2=within(prokka2, V9<-data.frame(do.call('rbind', strsplit(as.character(V9), 'Name=', fixed=TRUE))))
 prokka2=within(prokka2, V9$X2<-data.frame(do.call('rbind', strsplit(as.character(V9$X2), ';', fixed=TRUE))))
