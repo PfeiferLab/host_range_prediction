@@ -1,13 +1,5 @@
-#loadfirst
-setwd("C:/Users/Owner/OneDrive - Arizona State University/Documents/hostrange/asynt/")
 library(intervals)
-
 source("asynt.R")
-
-#if we have a single genomic region we are interested in, we can visualise the alignments diretcly
-# First import the alignment data
-setwd("C:/Users/Owner/OneDrive - Arizona State University/Documents/hostrange/")
-#alignments <- import.paf("mm2asm20.paf.gz")
 
 ###TO RUN
 #SELCT A BLAST = ASSIGN EACH RESULTS A GAP1 GAP2 OR GAP3
@@ -130,59 +122,6 @@ prokka2=prokka1[prokka1$overlap == "TRUE",]
 prokka2=within(prokka2, V9<-data.frame(do.call('rbind', strsplit(as.character(V9), 'Name=', fixed=TRUE))))
 prokka2=within(prokka2, V9$X2<-data.frame(do.call('rbind', strsplit(as.character(V9$X2), ';', fixed=TRUE))))
 
-
-
 #list of actual gene names
 prokka3=prokka2[!grepl("ID=", prokka2$V9$X2$X1),]
-
-
 write.csv(prokka3, "143nonhomolgousout.csv")
-
-
-
-
-
-
-
-
-
-##########################################################################
-#ehhh rest of these packages not as useful
-#we can make the plot look a bit more fancy by using sigmoid lines
-plot.alignments(alignments, sigmoid=TRUE)
-
-#focus in on a specific region by setting the first and last base in the reference and query
-plot.alignments(alignments, sigmoid=TRUE, Rfirst=1500000, Rlast = 1800000, Qfirst=1850000, Qlast=2150000)
-
-
-ref_data <- import.genome(fai_file="Escherichia_coli_ATCC_10536.fasta.fai")
-query_data <- import.genome(fai_file="Escherichia_coli_ATCC_15144.fasta.fai")
-
-#Now we can plot a diagonal alignment 'dot plot'
-plot.alignments.diagonal(alignments, reference_lens=ref_data$seq_len, query_lens=query_data$seq_len,
-                         reference_ori=ref_data$seq_ori, query_ori = query_data$seq_ori,
-                         no_reverse=TRUE, no_reorder=TRUE, no_labels=TRUE)
-
-
-
-
-
-##gene comparisons
-library(ade4)
-library(genoPlotR)
-
-setwd("C:/Users/Owner/OneDrive - Arizona State University/Documents/hostrange/")
-
-BH <- try(read_dna_seg_from_file("PROKKA_04272023.gbk"))
-BQ <- try(read_dna_seg_from_file("PROKKA_04272023_15144.gbk"))
-
-BH_vs_BQ <- try(read_comparison_from_blast("ecoli.blast"))
-
-
-xlims <- list(c(50000,70000), c(50000,70000))
-plot_gene_map(dna_segs=list(BH, BQ),
-              comparisons=list(BH_vs_BQ),
-              xlims=xlims,
-              main="BH vs BQ, comparison of the first 50 kb",
-              gene_type="side_blocks",
-              dna_seg_scale=TRUE, scale=FALSE)
