@@ -8,21 +8,23 @@ library(scales)
 library(dplyr)
 library(RColorBrewer)
 
-#all gordonia and e. coli phage datasets combined
+#you actually need to rescale them all at the same time across all datasets
 combined=read.csv("everything_all.csv")
 
 #read in all columns
 colnames(combined) <- c("X","variable","value","shape","shape2","tool","pvalue")
-#but only select these, leaveoutwish plvaues intil upset plot
-#combined=combined[,c("X","variable","value","shape","shape2","tool")]
-#combined <- ddply(combined, .(X), transform, rescale = rescale(value))
-#combined <- ddply(combined, .(variable), transform, rescale2 = rescale(value))
-
+#use wish p value not raw log score - invert wish and vhm scores to match php and phirbo
 combined$finalvalue=ifelse(combined$tool=="WIsH", combined$pvalue, combined$value)
 combined$finalvalue2 = ifelse(combined$tool=="VHM" | combined$tool=="WIsH", 1-combined$finalvalue,combined$finalvalue)
 
-#rescale per tool across all datasets
-combined <- ddply(combined, .(tool), transform, rescale3 = rescale(finalvalue2))
+#rescale per tool across all datasets but not phirbo
+allbutphirbo=combined[combined$tool == "VHM" | combined$tool == "WIsH" | combined$tool == "PHP", ]
+phirboonly=combined[combined$tool == "Phirbo",]
+
+allbutphirbo <- ddply(allbutphirbo, .(tool), transform, rescale3 = rescale(finalvalue2))
+phirboonly <- ddply(phirboonly, .(X), transform, rescale3 = rescale(finalvalue2))
+
+combined=rbind(allbutphirbo,phirboonly)
 
 combined$variable=sub("^(\\S+) (\\S+) ", "\\1 \\2)~(", combined$variable)
 combined$variable=paste0("italic(", combined$variable)
@@ -70,7 +72,7 @@ q = ggplot() +
                             labels = c("no","yes"),
                             name = "experimentally validated host?") + 
   
-  ###this whole next part is just to get the border
+  ###border
   geom_point(data=GMAs, aes(rename, fct_inorder(variable), shape = shape2), size = 5, stroke=2) +
   
   #scale_shape_identity() +
@@ -133,7 +135,7 @@ q = ggplot() +
                             labels = c("no","yes"),
                             name = "experimentally validated host?") + 
   
-  ###this whole next part is just to get the border
+  ###border
   geom_point(data=ecoli, aes(tool, fct_inorder(variable), shape = shape2), size = 11, stroke=2) +
   
   #scale_shape_identity() +
@@ -155,4 +157,9 @@ q = ggplot() +
                             name = "experimentally validated host?") 
 
 q
+#maybe put title on hold
+#q + ggtitle("SFP10") +
+#  theme(plot.title = element_text(size = 22, hjust = 0.5))
+
+
 
