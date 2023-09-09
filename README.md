@@ -61,7 +61,10 @@ WIsH/WIsH -c predict -g phage_genomes/ -m modelDir -r outputResultDir -b 1000 -n
 - `-b 1000`: k option to output the k best prediction by likelihood
 - `-n outputNullModelResultDir/nullParameters.tsv`: location of null model; to be used when p-values are desired
 
-# Exploratory Tools 
+# Exploratory Tools
+
+Exploratory tool analyses were done on the Open Science Pool from the Open Science Grid (https://osg-htc.org/services/open_science_pool.html) <br />
+
 All exploratory tools require a docker image to be created before running the tools <br /> 
 ```
 apptainer build toolname.sif toolname.def
@@ -69,10 +72,24 @@ apptainer shell toolname.sif
 cd /opt/miniconda/bin
 . activate
 ```
+The `cd /opt/miniconda/bin` and `. activate` commands are important in activating the underlying conda environment within the container.
 
-### CHERRY
+### CHERRY 
 https://github.com/KennthShang/CHERRY <br /> 
-Prepare the database by unpacking in install location via the command: `apptainer shell cherry.sif` <br /> 
+To run CHERRY, do the following:
+- Clone the CHERRY repository to a directory: `git clone https://github.com/KennthShang/CHERRY.git`
+- Run a shell on the built containder: `apptainer shell cherry.sif`
+- Activate the environment: `cd /opt/miniconda/bin` and `. activate`
+- Change directory to where you cloned the CHERRY repository: `cd CHERRY/`
+- Prepare the database:
+```
+cd dataset
+bzip2 -d protein.fasta.bz2
+bzip2 -d nucl.fasta.bz2
+cd ../prokaryote
+gunzip *
+cd ..
+```
 Predict hosts for viruses using a fasta file containing the viral sequences as the input <br />  
 `python run_Speed_up.py --contigs phage_genome.fasta --model pretrain --topk 1000` <br />
 - `--contigs`: input fasta file
