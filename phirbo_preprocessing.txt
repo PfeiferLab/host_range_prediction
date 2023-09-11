@@ -1,0 +1,16 @@
+# Written by: Cyril Versoza
+# Date: September 11, 2023
+
+# This is a collection of commands that were used for the creation of ranked lists requred by Phirbo.
+
+# Example BLAST command:
+# Note: Do the same for hosts as well.
+blastn -db ref_prok_rep_genomes -query HY01.fasta -task blastn -num_threads 20 -out HY01.BLAST.txt
+
+# The following one-liner will create the structure of the lists needed by Phirbo.
+# If two results have the same rank (i.e., score), they will be in the same line separated by a comma.
+awk '/>/{exit} 1' HY01.BLAST.txt | sed -n '/Sequences/,$p' | grep -v Sequences | awk 'NF' | \
+awk '{print $2, $3, $(NF-1)}' | sed 's/,//g' | sed 's/ /-/' | tr " " "," | \
+uniq | sort -u -t, -k1,1 | tr "," "\t" | sort -k 2rg | \
+awk -F'\t' -v OFS='\t' '{x=$2;$2="";a[x]=a[x]$0}END{for(x in a)print x,a[x]}' | \
+sort -k 1gr | cut -f2- | tr "\t" "," | sed 's/,$//' | tr "-" " " > HY01.txt
