@@ -9,6 +9,20 @@ Run phribo by providing two input directories (i.e., for phages [`phage_virusbla
 
 ### PHIST
 https://github.com/refresh-bio/PHIST <br />
+
+Due to dependencies, PHIST will be run using a Singularity container image. To create the image, run the following commands:
+```
+# Build the image:
+apptainer build phist.sol.sif phist_image.def
+
+# Create an interactive session using the PHIST image:
+SIMG=phist.sol.sif interactive
+
+# Activate the base environment:
+cd /opt/miniconda/bin
+. activate
+```
+
 PHIST takes as input two directories containing FASTA files (gzipped or not) with genomic sequences of viruses (`phage_genome_dir`) and candidate hosts (`host_dir`) <br />
 `python PHIST/phist.py phage_genome_dir host_dir phage_PHIST_outdir` <br />
 Results will be in the output directory (`phage_PHIST_outdir`) labeled as `predictions.csv`
@@ -187,10 +201,9 @@ make
 Run VPF-Class <br /> 
 ```
 stack exec -- vpf-class \
---input-seqs /scratch/cversoza/host_range_prediction/FASTA/GMA2.fasta \
+--input-seqs /scratch/cversoza/host_range_prediction/all.fasta \
 --output-dir /scratch/cversoza/host_range_prediction/VPF-Class/out \
---data-index /scratch/cversoza/host_range_prediction/VPF-Class/vpf-class-data/index.yaml \
---hmmer-prefix /scratch/cversoza/host_range_prediction/VPF-Class/hmmer-3.4/src
+--data-index /scratch/cversoza/host_range_prediction/VPF-Class/vpf-class-data/index.yaml
 ```
 - `--data-index`: file that specifies classification levels
 - `-i`: input file
