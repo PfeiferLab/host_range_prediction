@@ -139,17 +139,27 @@ Perform host predictions using a set of pre-computed model files <br />
 
 ### viral Host UnveiLing Kit (vHULK)
 https://github.com/LaboratorioBioinformatica/vHULK <br />  
+To run vHULK, do the following:
+- Clone the vHULK repository to a directory: `git clone https://github.com/LaboratorioBioinformatica/vHULK`
+- Run a shell on the built containder using ASU's Sol supercomputer (which uses Slurm): `SIMG=vhulk.sol.sif interactive`
+- Activate the environment: `cd /opt/miniconda/bin` and `. activate`
+- Change directory to where you cloned the RaFAH repository: `cd vHULK/`
+  
 Run vHULK on target genera <br />  
-`python vHULK.py -i phage_genomes/ -o phage_vhulk_outdir --all`
+`python vHULK.py -i /scratch/cversoza/host_range_prediction/vHULK/input/ -o /scratch/cversoza/host_range_prediction/vHULK/output/ --all`
 - `-i`: input directory; path to a folder containing metagenomic bins in .fa or .fasta format
 - `-o`: output directory; location to store results in -- will be created if absent
 - `--all`: write predictions for all input bins/genomes, even if they were skipped (i.e., size filtered or hmmscan failed)
 
 ### VirHostMatcher-Net
 https://github.com/WeiliWw/VirHostMatcher-Net <br /> 
-Install dependencies, build local modules, download required databases via the command: `apptainer shell vhmn.sif` <br /> 
+To run VirHostMatcher-Net, do the following:
+- Run a shell on the built containder using ASU's Sol supercomputer (which uses Slurm): `SIMG=vhmn.sol.sif interactive`
+- Activate the environment: `cd /opt/miniconda/bin` and `. activate`
+Note: VirHostMatcher-Net is already built into the container image
+
 Run VirHostMatcher-Net <br /> 
-`python /opt/VirHostMatcher-Net/VirHostMatcher-Net.py -q phage_genomes -o phage_vhmn_out -i tmp -n 3 -t 8` <br /> 
+`python /opt/VirHostMatcher-Net/VirHostMatcher-Net.py -q /scratch/cversoza/host_range_prediction/VHM-Net/input -o /scratch/cversoza/host_range_prediction/VHM-Net/output -i /scratch/cversoza/host_range_prediction/VHM-Net/tmp -n 10 -t 10` <br /> 
 - `-q`: directory containing query virus genomes with .fasta or .fa extension
 - `-o`: output directory
 - `-i`: directory storing intermediate results
@@ -157,7 +167,8 @@ Run VirHostMatcher-Net <br />
 - `-t`: number of threads to use
 
 ### VPF-Class 
-https://github.com/biocom-uib/vpf-tools <br />  
+https://github.com/biocom-uib/vpf-tools <br /> 
+
 Clone the repository and compile all targets using the command: `apptainer shell vhulk.sif` <br /> 
 Run vHULK <br /> 
 `stack exec -- vpf-class --data-index data/index.yaml -i phage.fasta -o phage_test-classified`
