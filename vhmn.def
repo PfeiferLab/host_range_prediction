@@ -1,3 +1,6 @@
+# Written by: Abby Howell
+# Date: September 11, 2023
+
 Bootstrap: docker
 From: opensciencegrid/osgvo-el7:latest
 

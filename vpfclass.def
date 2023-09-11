@@ -1,2 +1,26 @@
+# Written by: Cyril Versoza
+# Date: September 11, 2023
+
+# This script serves to create a container for VPF-Class.
+
 Bootstrap: docker
-From: bielr/vpf-tools
+From: opensciencegrid/osgvo-ubuntu-20.04:latest
+
+%post
+    apt-get update
+    curl -sSL https://get.haskellstack.org/ | sh
+    cd /opt
+    git clone https://github.com/biocom-uib/vpf-tools
+    cd vpf-tools
+    stack build
+    cd /opt
+    wget http://eddylab.org/software/hmmer/hmmer-3.4.tar.gz
+    tar -xvzf hmmer-3.4.tar.gz
+    cd hmmer-3.4
+    ./configure
+    make
+    make install
+    cd /opt
+    git clone https://github.com/hyattpd/Prodigal.git
+    cd Prodigal
+    make install

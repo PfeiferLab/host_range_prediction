@@ -1,3 +1,9 @@
+# Written by: Cyril Versoza
+# September 11, 2023
+
+# This script is adapted from Abby Howell's hostg.def file.
+# I added the scikit-learn and ete3 installations.
+
 Bootstrap: docker
 From: opensciencegrid/osgvo-el7:latest
 
@@ -13,3 +19,15 @@ From: opensciencegrid/osgvo-el7:latest
     conda install -c anaconda h5py
     conda install -c bioconda -c anaconda numpy pandas scipy biopython tensorflow=2.8.2
     conda install -c bioconda perl-encode
+    conda install -c conda-forge biopython
+    conda install -c anaconda numpy
+    conda install -c pytorch pytorch
+    conda install -c anaconda networkx
+    conda install -c anaconda pandas
+    conda install -c bioconda diamond
+    conda install -c bioconda blast
+    conda install -c bioconda mcl
+    conda install -c bioconda prodigal
+    conda install -c anaconda scipy
+    conda install -c anaconda scikit-learn
+    conda install -c conda-forge ete3

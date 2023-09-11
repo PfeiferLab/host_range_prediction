@@ -1,6 +1,8 @@
+# Written by: Cyril Versoza and Abby Howell
+# Date: September 11, 2023
+
 Bootstrap: docker
 From: opensciencegrid/osgvo-el7:latest
-
 
 %post
     cd /opt
