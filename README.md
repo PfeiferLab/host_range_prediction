@@ -174,9 +174,23 @@ To run VPF-Class, do the following:
 - Activate the environment: `cd /opt/miniconda/bin` and `. activate`
 - Change directory to where you cloned the RaFAH repository: `cd vpf-tools/`
 - Build the tool: `stack build`
+- Download the supplementary material: `wget https://bioinfo.uib.es/~recerca/VPF-Class/vpf-class-data.tar.gz`
+- Download HMMER: `wget http://eddylab.org/software/hmmer/hmmer-3.4.tar.gz`
+- Uncompress and change to the directory:
+```
+tar -xvzf hmmer-3.4.tar.gz
+cd hmmer-3.4
+./configure
+make
+```
 
-Run vHULK <br /> 
-`stack exec -- vpf-class --data-index data/index.yaml -i phage.fasta -o phage_test-classified`
+Run VPF-Class <br /> 
+```
+stack exec -- vpf-class \
+--input-seqs /scratch/cversoza/host_range_prediction/FASTA/GMA2.fasta \
+--output-dir /scratch/cversoza/host_range_prediction/VPF-Class/out \
+--data-index /scratch/cversoza/host_range_prediction/VPF-Class/vpf-class-data/index.yaml
+```
 - `--data-index`: file that specifies classification levels
 - `-i`: input file
 - `-o`: output directory
