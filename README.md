@@ -3,7 +3,7 @@
 ### Phirbo
 https://github.com/aziele/phirbo <br />
 Download taxdb.btd, taxdb.bti, taxdb.tar.gz from https://ftp.ncbi.nlm.nih.gov/blast/db/taxdb.tar.gz <br />
-Prepare rank-biased overlap blast results via `blast_forphirbo.sh` <br />
+Prepare rank-biased overlap blast results via `phirbo_preprocessing.txt` <br />
 Run phribo by providing two input directories (i.e., for phages [`phage_virusblast/`] and bacteria [`phage_hostblast/`]) containing ranked lists from blast output, and an output file name (`phage_phirbo/predictions.csv`) <br />
 `python phirbo/phirbo.py phage_virusblast/ phage_hostsblast/ phage_phirbo/predictions.csv`
 
@@ -105,8 +105,8 @@ gunzip *
 cd ..
 ```
 Predict hosts for viruses using a fasta file containing the viral sequences as the input <br />  
-`python run_Speed_up.py --contigs /scratch/cversoza/host_range_prediction/all.fasta --model pretrain --topk 1000` <br />
-- `--contigs`: input fasta file
+`python run_Speed_up.py --contigs all.fasta --model pretrain --topk 1000` <br />
+- `--contigs`: input fasta file (`all.fasta` is a single FASTA with multiple sequences)
 - `--model`: predicting host with pretrained (or retrained) parameters (default: pretrained)
 - `--topk`: host prediction with topk score (default: 1)
 
@@ -124,8 +124,8 @@ bzip2 -d protein.fasta.bz2
 bzip2 -d nucl.fasta.bz2
 ```
 Predict hosts for viruses using a fasta file containing the viral sequences as the input <br />  
-`python run_Speed_up.py --contigs /scratch/cversoza/host_range_prediction/all.fasta --t 0`
-- `--contigs`: path to the contigs file
+`python run_Speed_up.py --contigs all.fasta --t 0`
+- `--contigs`: path to the contigs file (`all.fasta` is a single FASTA with multiple sequences)
 - `--t`: threshold value; predictions will only be outputted that have confidence (SoftMax) values above t (default: 0)
 
 ### Random Forest Assignment of Hosts (RaFAH)
@@ -160,7 +160,7 @@ To run vHULK, do the following:
 - Change directory to where you cloned the RaFAH repository: `cd vHULK/`
   
 Run vHULK on target genera <br />  
-`python vHULK.py -i /scratch/cversoza/host_range_prediction/vHULK/input/ -o /scratch/cversoza/host_range_prediction/vHULK/output/ --all`
+`python vHULK.py -i input/ -o output/ --all`
 - `-i`: input directory; path to a folder containing metagenomic bins in .fa or .fasta format
 - `-o`: output directory; location to store results in -- will be created if absent
 - `--all`: write predictions for all input bins/genomes, even if they were skipped (i.e., size filtered or hmmscan failed)
@@ -173,7 +173,7 @@ To run VirHostMatcher-Net, do the following:
 Note: VirHostMatcher-Net is already built into the container image
 
 Run VirHostMatcher-Net <br /> 
-`python /opt/VirHostMatcher-Net/VirHostMatcher-Net.py -q /scratch/cversoza/host_range_prediction/VHM-Net/input -o /scratch/cversoza/host_range_prediction/VHM-Net/output -i /scratch/cversoza/host_range_prediction/VHM-Net/tmp -n 10 -t 10` <br /> 
+`python /opt/VirHostMatcher-Net/VirHostMatcher-Net.py -q input -o output -i tmp -n 10 -t 10` <br /> 
 - `-q`: directory containing query virus genomes with .fasta or .fa extension
 - `-o`: output directory
 - `-i`: directory storing intermediate results
@@ -201,12 +201,12 @@ make
 Run VPF-Class <br /> 
 ```
 stack exec -- vpf-class \
---input-seqs /scratch/cversoza/host_range_prediction/all.fasta \
---output-dir /scratch/cversoza/host_range_prediction/VPF-Class/out \
---data-index /scratch/cversoza/host_range_prediction/VPF-Class/vpf-class-data/index.yaml
+--input-seqs all.fasta \
+--output-dir out \
+--data-index vpf-class-data/index.yaml
 ```
 - `--data-index`: file that specifies classification levels
-- `-i`: input file
+- `-i`: input file (`all.fasta` is a single FASTA with multiple sequences)
 - `-o`: output directory
 
 # Analysis and Plotting 
