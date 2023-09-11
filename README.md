@@ -155,7 +155,7 @@ Run vHULK on target genera <br />
 https://github.com/WeiliWw/VirHostMatcher-Net <br /> 
 To run VirHostMatcher-Net, do the following:
 - Run a shell on the built containder using ASU's Sol supercomputer (which uses Slurm): `SIMG=vhmn.sol.sif interactive`
-- Activate the environment: `cd /opt/miniconda/bin` and `. activate`
+- Activate the environment: `cd /opt/miniconda/bin` and `. activate` <br />
 Note: VirHostMatcher-Net is already built into the container image
 
 Run VirHostMatcher-Net <br /> 
@@ -168,8 +168,13 @@ Run VirHostMatcher-Net <br />
 
 ### VPF-Class 
 https://github.com/biocom-uib/vpf-tools <br /> 
+To run VPF-Class, do the following:
+- Clone the VPF-Class repository to a directory: `git clone https://github.com/biocom-uib/vpf-tools`
+- Run a shell on the built containder using ASU's Sol supercomputer (which uses Slurm): `SIMG=vpfclass.sol.sif interactive`
+- Activate the environment: `cd /opt/miniconda/bin` and `. activate`
+- Change directory to where you cloned the RaFAH repository: `cd vpf-tools/`
+- Build the tool: `stack build`
 
-Clone the repository and compile all targets using the command: `apptainer shell vhulk.sif` <br /> 
 Run vHULK <br /> 
 `stack exec -- vpf-class --data-index data/index.yaml -i phage.fasta -o phage_test-classified`
 - `--data-index`: file that specifies classification levels
