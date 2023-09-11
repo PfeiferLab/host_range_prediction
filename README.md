@@ -5,6 +5,7 @@ https://github.com/aziele/phirbo <br />
 Download taxdb.btd, taxdb.bti, taxdb.tar.gz from https://ftp.ncbi.nlm.nih.gov/blast/db/taxdb.tar.gz <br />
 Prepare rank-biased overlap blast results via `phirbo_preprocessing.txt` <br />
 Run phribo by providing two input directories (i.e., for phages [`phage_virusblast/`] and bacteria [`phage_hostblast/`]) containing ranked lists from blast output, and an output file name (`phage_phirbo/predictions.csv`) <br />
+
 `python phirbo/phirbo.py phage_virusblast/ phage_hostsblast/ phage_phirbo/predictions.csv`
 
 ### PHIST
