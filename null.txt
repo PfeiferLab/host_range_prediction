@@ -11,6 +11,7 @@
 >gi|514341775|gb|KC821614.1| Cellulophaga phage phi38:1, complete genome
 >gi|514343001|gb|KC821629.1| Cellulophaga phage phi38:2, complete genome
 >gi|514343178|gb|KC821632.1| Cellulophaga phage phi4:1, complete genome
+>CP000917.1 Escherichia phage Eps7, complete genome
 >gi|310005633|gb|GU071100.1| Cyanophage 9515-10a, complete genome
 >gi|469520645|gb|JF974293.1| Cyanophage KBS-M-1A genomic sequence
 >gi|469520587|gb|HQ634188.1| Cyanophage KBS-P-1A genomic sequence
@@ -30,6 +31,27 @@
 >gi|459348360|gb|HQ316603.1| Cyanophage S-SSM6b genomic sequence
 >gi|374716420|gb|JQ245707.1| Cyanophage S-TIM5, complete genome
 >gi|469518782|gb|HQ634189.1| Cyanophage Syn30 genomic sequence
+>DQ121662.1 Escherichia phage Jk06, complete genome
+>gi|309386901|gb|HM173637.1| Escherichia phage HK75, complete genome
+>gi|510948995|gb|KC801932.2| Escherichia phage Lw1, complete genome
+>gi|338235630|gb|JF770475.1| Escherichia phage phiEB49, complete genome
+>GQ357916.1 Escherichia phage D108, complete genome
+>GU196280.1 Escherichia phage K1ind2, complete genome
+>HM208537.1 Escherichia phage HK639, complete genome
+>HQ665011.1 Escherichia phage vB_EcoS_AKFV33, complete genome
+>JN593240.1 Escherichia phage Cba120, complete genome
+>JX128257.1 Escherichia phage ECML-4, complete genome
+>JX415535.1 Escherichia phage ECBP1, complete genome
+>JX560968.1 Escherichia phage EC6, complete genome
+>JX912252.1 Escherichia phage ADB-2, complete genome
+>KF030445.1 Escherichia phage 1720a-02, complete genome
+>KF771236.1 Escherichia phage bV_EcoS_AHP24, complete genome
+>KF771237.1 Escherichia phage bV_EcoS_AHP42, complete genome
+>KF771238.1 Escherichia phage bV_EcoS_AHS24, complete genome
+>KF981730.1 Escherichia phage KBNP1711, complete genome
+>KM190144.1 Escherichia phage Av-05, complete genome
+>KM507819.1 Escherichia phage 121Q, complete genome
+>KP308307.1 Escherichia phage 172-1, complete genome
 >gi|22217797|emb|AJ251789.2| Lactobacillus casei bacteriophage A2 complete genome
 >gi|545609259|gb|KF188410.1| Lactobacillus phage phiLdb, complete genome
 >gi|289063527|gb|GQ979703.1| Lactococcus lactis phage p2, complete genome
