@@ -188,7 +188,7 @@ Run VirHostMatcher-Net <br />
 - `-n`: topN; number of top predictions written to the output files (all predictions will be output if there is a tie in score)
 - `-t`: number of threads to use
 
-### VPF-Class (to change)
+### VPF-Class
 https://github.com/biocom-uib/vpf-tools <br /> 
 
 To run VPF-Class, do the following:
