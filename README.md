@@ -2,6 +2,7 @@
 
 ### Phirbo
 https://github.com/aziele/phirbo <br />
+
 Download taxdb.btd, taxdb.bti, taxdb.tar.gz from https://ftp.ncbi.nlm.nih.gov/blast/db/taxdb.tar.gz <br />
 Prepare rank-biased overlap blast results via `phirbo_preprocessing.txt` <br />
 Run phribo by providing two input directories (i.e., for phages [`phage_virusblast/`] and bacteria [`phage_hostblast/`]) containing ranked lists from blast output, and an output file name (`phage_phirbo/predictions.csv`) <br />
@@ -30,6 +31,7 @@ Results will be in the output directory (`phage_PHIST_outdir`) labeled as `predi
 
 ### Prokaryotic virus Host Predictor (PHP)
 https://github.com/congyulu-bioinfo/PHP  <br />
+
 First, calculate the K-mer frequency of the host <br />
 `python3 PHP/countKmer.py -f phage_host_genomes -d phage_host_PHPkmer -n phage_PHPHostKmer -c -1` where: <br />
 - `-f phage_host_genomes`: fasta file of prokaryotic genome sequence (_**one fasta per file**_)
@@ -46,6 +48,7 @@ Then, predict the infection relationship between the virus and the host  <br />
 
 ### VirHostMatcher 
 https://github.com/jessieren/VirHostMatcher <br />
+
 To run VHM create a folder containing virus fasta files and a folder containing host fasta files - no subfolders  <br />
 `python VirHostMatcher/vhm.py -v phage_genomes/ -b phage_host_genomes/ -o Phage_vhm_output/ -d 1` <br />
 - `-v phage_genomes/`: path to virus folder
@@ -55,6 +58,7 @@ To run VHM create a folder containing virus fasta files and a folder containing 
 
 ### WIsH 
 https://github.com/soedinglab/WIsH <br /> 
+
 Null directory is created from a diverse range of Alteromonas, Cellulophage, Cyanophage, Lactobacillus, Mycobacterium, Oenococcus, Pelagibacter, Prochlorococcus, Rhizobium, Synechococcus, and Thermus phage genomes that are known not to infect the bacterial model listed in null.txt <br /> 
 Create host model directory <br /> 
 `WIsH/WIsH -c build -g phage_hosts_genomes/ -m modelDir`  <br /> 
@@ -91,6 +95,7 @@ The `cd /opt/miniconda/bin` and `. activate` commands are important in activatin
 
 ### CHERRY 
 https://github.com/KennthShang/CHERRY <br /> 
+
 To run CHERRY, do the following:
 - Clone the CHERRY repository to a directory: `git clone https://github.com/KennthShang/CHERRY.git`
 - Run a shell on the built containder using ASU's Sol supercomputer (which uses Slurm): `SIMG=cherry.sol.sif interactive`
@@ -113,6 +118,7 @@ Predict hosts for viruses using a fasta file containing the viral sequences as t
 
 ### HostG
 https://github.com/KennthShang/HostG  <br /> 
+
 To run HostG, do the following:
 - Clone the HostG repository to a directory: `git clone https://github.com/KennthShang/HostG.git`
 - Run a shell on the built containder using ASU's Sol supercomputer (which uses Slurm): `SIMG=hostg.sol.sif interactive`
@@ -168,6 +174,7 @@ Run vHULK on target genera <br />
 
 ### VirHostMatcher-Net
 https://github.com/WeiliWw/VirHostMatcher-Net <br /> 
+
 To run VirHostMatcher-Net, do the following:
 - Run a shell on the built containder using ASU's Sol supercomputer (which uses Slurm): `SIMG=vhmn.sol.sif interactive`
 - Activate the environment: `cd /opt/miniconda/bin` and `. activate` <br />
@@ -183,6 +190,7 @@ Run VirHostMatcher-Net <br />
 
 ### VPF-Class (to change)
 https://github.com/biocom-uib/vpf-tools <br /> 
+
 To run VPF-Class, do the following:
 - Clone the VPF-Class repository to a directory: `git clone https://github.com/biocom-uib/vpf-tools`
 - Run a shell on the built containder using ASU's Sol supercomputer (which uses Slurm): `SIMG=vpfclass.sol.sif interactive`
