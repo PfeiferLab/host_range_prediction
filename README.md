@@ -1,3 +1,6 @@
+Supplemental information for A.A. Howell*, C.J. Versoza*, S.P. Pfeifer. 2024. Computational host range prediction – the good, the bad, and the ugly. Virus Evol., 10(1): 1–11.
+
+
 # Confirmatory Tools 
 
 ### Phirbo
