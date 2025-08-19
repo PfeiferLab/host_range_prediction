@@ -1,6 +1,6 @@
 # host_range_prediction
 
-Supplemental information for A.A. Howell*, C.J. Versoza*, S.P. Pfeifer. 2024. **Computational host range prediction – the good, the bad, and the ugly.** *Virus Evol.*, 10(1): 1–11.
+Supplemental information for A.A. Howell*, C.J. Versoza*, S.P. Pfeifer. 2024. [Computational host range prediction – the good, the bad, and the ugly.](https://doi.org/10.1093/ve/vead083). <i>Virus Evol.</i>, 10(1): 1–11.
 
 
 # Confirmatory Tools 
